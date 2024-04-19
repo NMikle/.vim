@@ -1,6 +1,5 @@
 # .vim
 
-" Let this be an example comment to display the correct soft-wrap spot on a li
 Covers config files for ~/.vim directory.
 ~/.vim directory in a single place. Contains .vimrc and friends (for
 sourcing) for easier access from new machines/nodes/images/etc. Right now, the
