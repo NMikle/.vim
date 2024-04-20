@@ -1,6 +1,7 @@
 # .vim
 
 Covers config files for ~/.vim directory.
+
 ~/.vim directory in a single place. Contains .vimrc and friends (for
 sourcing) for easier access from new machines/nodes/images/etc. Right now, the
 `master` branch is general-purpose oriented with focus on
@@ -45,4 +46,61 @@ line).
 [magit](https://github.com/magit/magit) version for git. Unfortunately lacks
 of features and is very slow, but I haven't found a nicer magit-like solution
 for vim yet.
+
+## Usage instructions
+
+The instructions will be updated once I write a script for uniform
+installation but until that there are couple of things that need to be done
+by hands:
+
+1. Clone to `~/.vim` directory
+   ```shell
+   git clone git@github.com:NMikle/.vim.git ~/.vim
+   ```
+    **Note:** The `~/.vim` directory must be empty (or non-existent) prior to
+    this command execution. If your directory contains some settings, you
+    _might_ wish to back it up first.
+2. Vim resolves config in the following order (see `:help .vimrc`):
+   - ~/.vimrc
+   - ~/.vim/vimrc
+   - the rest of places
+
+   I like my file named `.vimrc` (with a dot) but for this to be resolved we
+   need to help vim find this file:
+   ```shell
+   ln -s ~/.vim/.vimrc ~/.vimrc
+   ```
+   This creates a symlink to a `~/.vim/.vimrc` and puts this symlink where vim
+   can find it (`~/.vimrc`)
+
+   **Note:** if you already have `~/.vimrc`, you need to back it up and re-run
+   the command.
+3. `ln` command creates a symlink with _execute_ permissions. To remove
+   execute permission run:
+   ```shell
+   chmod -h 644 ~/.vimrc
+   ```
+   this will set symlink permissions to `rw-r--r--` which I found to be
+   default for my `~/.vimrc`
+4. You will need couple extra things on the system for plugins to work. This
+   list depends on the plugins installed and your goals, but for me, it is:
+   - nvm, node, npm (for the CoC)
+   - haskell-language-server (use [ghcup](https://www.haskell.org/ghcup/) to
+     install haskell tools) for the CoC to work with haskell files (specified
+     in [coc settings](./coc-settings.json))
+   - some sort of dev-icons. I use
+     [JetBrains Mono](https://www.jetbrains.com/lp/mono/) with
+     [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) which you can
+     install like this
+     ```shell
+     brew tap homebrew/cask-fonts
+     brew install font-jetbrains-mono-nerd-font
+     ```
+     **Note:** you also need to enable/use this font in your terminal
+     settings.
+   - [fd](https://github.com/sharkdp/fd) as `fzf` search backend and
+     [bat](https://github.com/sharkdp/bat) for `fzf` preview feature.
+
+This list is just my preference and should be adjusted for your needs. Once I
+finish the auto install script, installation should become automatic.
 
