@@ -212,7 +212,7 @@ endfunction
 augroup cocCursonHighlight
     autocmd!
     autocmd CursorHold * silent call CocActionAsync('highlight')
-augroup end
+augroup END
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -227,7 +227,7 @@ augroup notexactlysure
     autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
     " Update signature help on jump placeholder.
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+augroup END
 
 " Applying code action to the selected region.
 " Example: `<leader>aap` for current paragraph
