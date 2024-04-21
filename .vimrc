@@ -327,14 +327,18 @@ endif
 
 nnoremap <F1> :NERDTreeToggle<CR>
 
-" Open NERDTree when Vim is started without file arguments
-" NOTE: this is not very useful and most of the time annoying to deal with
-" hence this piece is off for now.
-"augroup nerdTreeAutoOpen
-"    autocmd!
-"    autocmd StdinReadPre * let s:std_in=1
-"    autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | execute "normal! \<C-W>p" | endif
-"augroup END
+" Close the tab if NERDTree is the only window remaining in it.
+" The 'official' README auto close script is not working correctly. This is a
+" fix as per
+" https://github.com/preservim/nerdtree/issues/1411#issuecomment-1980628702
+" github thread.
+augroup nerdTreeAutoCloseOnExit
+    autocmd!
+    autocmd BufEnter * if winnr('$') == 1
+                \ && exists('b:NERDTree')
+                \ && b:NERDTree.isTabTree()
+                \ | call feedkeys(":quit\<CR>:\<BS>") | endif
+augroup END
 
 " If another buffer tries to replace NERDTree, put it in the other window, and
 " bring back NERDTree.
