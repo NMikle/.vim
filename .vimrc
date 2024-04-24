@@ -133,7 +133,6 @@ set background=light
 let g:gruvbox_contrast_light = 'soft'
 
 let g:gruvbox_invert_signs = 0
-nnoremap <silent><nowait> <leader>s :call gruvbox#invert_signs_toggle()<CR>
 
 colorscheme gruvbox
 
@@ -509,4 +508,5 @@ let g:gitgutter_sign_modified_removed        = ''
 " ==============================================================================
 
 let g:magit_refresh_gitgutter = 1
+nnoremap <silent><nowait> <leader>s :GitGutterToggle<CR>
 
