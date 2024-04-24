@@ -136,6 +136,34 @@ let g:gruvbox_invert_signs = 0
 
 colorscheme gruvbox
 
+hi! link haskellType GruvboxGreenBold
+hi! link haskellIdentifier GruvboxYellow
+hi! link haskellSeparator GruvboxFg3
+hi! link haskellDelimiter GruvboxFg3
+hi! link haskellOperators GruvboxRed
+"
+hi! link haskellBacktick haskellOperators
+hi! link haskellStatement GruvboxOrange
+hi! link haskellConditional GruvboxRed
+
+hi! link haskellKeyword GruvboxPurpleBold
+hi! link haskellLet GruvboxRed
+hi! link haskellDefault GruvboxAqua
+hi! link haskellWhere GruvboxRed
+hi! link haskellBottom GruvboxAqua
+hi! link haskellBlockKeywords GruvboxAqua
+hi! link haskellImportKeywords GruvboxBlueBold
+hi! link haskellDeclKeyword GruvboxRed
+hi! link haskellDecl GruvboxRed
+hi! link haskellDeriving GruvboxAqua
+hi! link haskellAssocType GruvboxAqua
+
+hi! link haskellNumber GruvboxPurple
+hi! link haskellPragma GruvboxPurple
+
+hi! link haskellString GruvboxGreen
+hi! link haskellChar GruvboxGreen
+
 " ==============================================================================
 " Airline options
 " ==============================================================================
