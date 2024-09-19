@@ -107,6 +107,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 
+Plug 'mbbill/undotree'
+
 call plug#end()
 
 " ==============================================================================
@@ -537,4 +539,10 @@ let g:gitgutter_sign_modified_removed        = ''
 
 let g:magit_refresh_gitgutter = 1
 nnoremap <silent><nowait> <leader>s :GitGutterToggle<CR>
+
+" ==============================================================================
+" mbbill/undotree config
+" ==============================================================================
+
+nnoremap <F5> :UndotreeToggle<CR>
 
