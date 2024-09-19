@@ -98,6 +98,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 
+Plug 'sainnhe/coc-java', { 'branch': 'feature/java-22', 'dir': '~/.config/coc/extensions/coc-java-22-pr', 'do': 'yarn install --frozen-lockfile' }
+
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 

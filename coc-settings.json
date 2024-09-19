@@ -36,6 +36,12 @@
           }
       }
     }
-  }
+  },
+  "java.configuration.runtimes": [
+      {
+          "name": "JavaSE-21",
+          "default": true
+      }
+  ]
 }
 
