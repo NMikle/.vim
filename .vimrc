@@ -131,8 +131,9 @@ if (empty($TMUX) && getenv('TERM_PROGRAM') != 'Apple_Terminal')
     endif
 endif
 
-set background=light
-let g:gruvbox_contrast_light = 'soft'
+set background=dark
+"let g:gruvbox_contrast_light = 'soft'
+let g:gruvbox_contrast_dark = 'medium'
 
 let g:gruvbox_invert_signs = 0
 
