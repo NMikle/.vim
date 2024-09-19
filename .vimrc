@@ -99,6 +99,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 
 Plug 'sainnhe/coc-java', { 'branch': 'feature/java-22', 'dir': '~/.config/coc/extensions/coc-java-22-pr', 'do': 'yarn install --frozen-lockfile' }
+Plug 'puremourning/vimspector'
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -536,12 +537,26 @@ let g:gitgutter_sign_removed_first_line      = ''
 let g:gitgutter_sign_removed_above_and_below = '󰹹'
 let g:gitgutter_sign_modified_removed        = ''
 
-" ==============================================================================
-" vim-gitgutter config
-" ==============================================================================
-
 let g:magit_refresh_gitgutter = 1
 nnoremap <silent><nowait> <leader>s :GitGutterToggle<CR>
+
+" ==============================================================================
+" vimspector debug config
+" ==============================================================================
+
+"let g:vimspector_configurations = {
+"            \ 'configurations': {
+"                \ 'Java Attach': {
+"                    \ 'adapter': '',
+"                    \ 'filetypes': ['java'],
+"                    \ 'request': 'attach',
+"                    \ 'sourcePaths': [
+"                        \ '${workspaceRoot}/src/main/java',
+"                        \ '${workspaceRoot}/src/test/java',
+"                      \ ]
+"                  \ }
+"              \ }
+"            \ }
 
 " ==============================================================================
 " mbbill/undotree config
