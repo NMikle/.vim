@@ -40,6 +40,7 @@
   "java.configuration.runtimes": [
       {
           "name": "JavaSE-21",
+          "path": "~/Library/Java/JavaVirtualMachines/openjdk-21.0.1/Contents/Home",
           "default": true
       }
   ]
