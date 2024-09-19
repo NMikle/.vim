@@ -19,14 +19,21 @@
       "filetypes": [
         "hs",
         "lhs",
-        "haskell"
+        "haskell",
+        "lhaskell"
       ],
-      "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true,
-          "maxNumberOfProblems": 10,
-          "completionSnippetsOn": true
-        }
+      "settings": {
+          "haskell": {
+              "checkParents": "CheckOnSave",
+              "checkProject": true,
+              "maxCompletions": 400,
+              "formattingProvider": "floskell",
+              "plugin": {
+                  "stan": {
+                      "globalOn": true
+                  }
+              }
+          }
       }
     }
   }
